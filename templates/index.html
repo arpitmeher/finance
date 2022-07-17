@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    main
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table %}
+                <tr>
+                    <td>{{row["Symbol"]}}</td>
+                    <td>{{row["Name"]}}</td>
+                    <td>{{row["Shares"]}}</td>
+                    <td>{{row["Price"] | usd }}</td>
+                    <td>{{row["Total"] | usd }}</td>
+                </tr>
+            {% endfor %}
+                <tr>
+                    <td>Cash</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{cash | usd}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <th>{{total | usd}}</th>
+                </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

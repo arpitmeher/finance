@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HISTORY
+{% endblock %}
+
+{% block main %}
+    <div class="msg">
+        <h1>HISTORY</h1>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Time</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{transaction["symbol"]}}</td>
+                    <td>{{transaction["shares"]}}</td>
+                    <td>{{transaction["price"] | usd }}</td>
+                    <td>{{transaction["time"]}}</td>
+                    <td>{{transaction["action"]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}
