@@ -10,3 +10,5 @@ Uses SQL database to store username, passwords and all the data associated with 
 Passwords are stored as hash values for security. <br/>
 Users can look up the current price of stocks using the quote function. <br/>
 Users can buy and sell stocks and watch the history of all previous transactions. <br/>
+A screen shot of the project is attached here:<br/>
+![scrrenshot](https://github.com/arpitmeher/finance/blob/main/Screenshot%20(108).png)
